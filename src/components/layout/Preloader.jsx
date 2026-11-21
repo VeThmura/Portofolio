@@ -14,7 +14,7 @@ export function Preloader({ onFinish }) {
 
   useEffect(() => {
     // Progress diisi bertahap dengan kecepatan stabil agar proses terlihat jelas.
-    const duration = 2400
+    const duration = 1800
     const startedAt = performance.now()
     let frameId
 
