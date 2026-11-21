@@ -691,6 +691,10 @@
 
   /* Dot-grid CSS digantikan canvas magnet saat efek aktif */
   html.magnet-field .dot-grid {
+    display: block;
+  }
+
+  html.magnet-field .magnet-canvas {
     display: none;
   }
 
@@ -1005,6 +1009,11 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  /* Background tetap bergerak karena menjadi bagian dari identitas visual situs. */
+  .dot-grid {
+    animation: dot-grid-drift 14s linear infinite !important;
   }
 }
 
