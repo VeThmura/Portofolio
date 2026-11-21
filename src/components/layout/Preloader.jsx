@@ -13,18 +13,16 @@ export function Preloader({ onFinish }) {
   const [visible, setVisible] = useState(true)
 
   useEffect(() => {
-    // Progress tetap dijalankan agar preloader terlihat konsisten di semua browser.
-    // Durasi dibuat cukup panjang agar animasi pengisian benar-benar terlihat.
-    const duration = 2000
+    // Progress diisi bertahap dengan kecepatan stabil agar proses terlihat jelas.
+    const duration = 2400
     const startedAt = performance.now()
     let frameId
 
     const animate = (now) => {
       const elapsed = now - startedAt
       const linear = Math.min(1, elapsed / duration)
-      // Ease-out agar gerakan halus: cepat di awal, melambat saat penuh.
-      const eased = 1 - (1 - linear) ** 3
-      const next = eased * 100
+      // Kecepatan linear membuat setiap kenaikan progress terlihat jelas.
+      const next = linear * 100
       setProgress(next)
 
       if (next < 100) {
