@@ -15,7 +15,7 @@ export function Preloader({ onFinish }) {
   useEffect(() => {
     // Progress tetap dijalankan agar preloader terlihat konsisten di semua browser.
     // Durasi dibuat cukup panjang agar animasi pengisian benar-benar terlihat.
-    const duration = 5000
+    const duration = 2600
     const startedAt = performance.now()
     let frameId
 
