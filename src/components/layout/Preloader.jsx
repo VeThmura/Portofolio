@@ -129,5 +129,5 @@ export function Preloader({ onFinish }) {
             </div>
           </div>
         </motion.div>
-  ) : null
+  )
 }
