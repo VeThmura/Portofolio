@@ -22,7 +22,7 @@ export function Preloader({ onFinish }) {
     }
 
     // Isi progress secara halus sampai penuh, lalu masuk ke halaman utama.
-    const duration = 1200
+    const duration = 2600
     const startedAt = performance.now()
     let frameId
 
