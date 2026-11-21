@@ -21,15 +21,26 @@ export function Preloader({ onFinish }) {
       return undefined
     }
 
-    // Jangan menahan konten hanya untuk animasi. Preloader selesai cepat
-    // setelah bundle React siap, sehingga situs terasa langsung terbuka.
-    const timer = window.setTimeout(() => {
-      setProgress(100)
-      setVisible(false)
-      onFinish?.()
-    }, 450)
+    // Isi progress secara halus sampai penuh, lalu masuk ke halaman utama.
+    const duration = 1200
+    const startedAt = performance.now()
+    let frameId
 
-    return () => window.clearTimeout(timer)
+    const animate = (now) => {
+      const elapsed = now - startedAt
+      const next = Math.min(100, (elapsed / duration) * 100)
+      setProgress(next)
+
+      if (next < 100) {
+        frameId = window.requestAnimationFrame(animate)
+      } else {
+        setVisible(false)
+        onFinish?.()
+      }
+    }
+
+    frameId = window.requestAnimationFrame(animate)
+    return () => window.cancelAnimationFrame(frameId)
   }, [onFinish])
 
   if (!visible) return null
