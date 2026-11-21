@@ -65,7 +65,7 @@ export function Preloader({ onFinish }) {
                   strokeLinejoin="round"
                   initial={{ pathLength: 0, opacity: 0 }}
                   animate={{ pathLength: 1, opacity: 1 }}
-                  transition={{ duration: 1.5, ease: 'easeInOut' }}
+                  transition={{ duration: 0.9, ease: 'easeInOut' }}
                 />
                 <motion.path
                   d="M6 92 L154 92"
@@ -74,7 +74,7 @@ export function Preloader({ onFinish }) {
                   strokeLinecap="round"
                   initial={{ pathLength: 0, opacity: 0 }}
                   animate={{ pathLength: 1, opacity: 1 }}
-                  transition={{ duration: 1.1, delay: 0.35, ease: 'easeInOut' }}
+                  transition={{ duration: 0.75, delay: 0.15, ease: 'easeInOut' }}
                 />
                 <motion.circle
                   cx="132"
@@ -83,21 +83,21 @@ export function Preloader({ onFinish }) {
                   fill="var(--color-sun-400)"
                   initial={{ scale: 0, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 0.6, ease: 'backOut' }}
+                  transition={{ duration: 0.35, delay: 0.35, ease: 'backOut' }}
                 />
                 <motion.path
                   d="M44 40 L34 50 L43 47 L52 53 Z"
                   fill="var(--color-mint-300)"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ delay: 1.1, duration: 0.4 }}
+                  transition={{ delay: 0.65, duration: 0.25 }}
                 />
               </svg>
               <motion.span
                 className="absolute top-5 right-2 w-8"
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: [0, -3, 0] }}
-                transition={{ opacity: { delay: 1.2, duration: 0.4 }, y: { delay: 1.2, duration: 2.4, repeat: Infinity, ease: 'easeInOut' } }}
+                transition={{ opacity: { delay: 0.45, duration: 0.25 }, y: { delay: 0.45, duration: 1.8, repeat: Infinity, ease: 'easeInOut' } }}
                 aria-hidden="true"
               >
                 <ChibiDuduk />
@@ -109,7 +109,7 @@ export function Preloader({ onFinish }) {
                 className="font-display text-lg font-bold tracking-tight"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.5 }}
+                transition={{ delay: 0.25, duration: 0.3 }}
               >
                 <span className="text-gradient">{site.shortName}</span>
               </motion.p>
@@ -117,7 +117,7 @@ export function Preloader({ onFinish }) {
                 className="mt-1 text-xs tracking-[0.22em] text-ink-muted uppercase"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0.7, duration: 0.5 }}
+                transition={{ delay: 0.4, duration: 0.3 }}
               >
                 {site.role}
               </motion.p>
