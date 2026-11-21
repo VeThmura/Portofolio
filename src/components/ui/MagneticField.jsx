@@ -32,6 +32,8 @@ export function MagneticField() {
   useEffect(() => {
     const fine = window.matchMedia?.('(pointer: fine)').matches
     const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+    // Field magnetik boleh nonaktif pada reduced-motion; karakter dekoratif
+    // tetap bergerak melalui animasi CSS di ChibiFloatField.
     if (!fine || reduced) return undefined
 
     const canvas = canvasRef.current

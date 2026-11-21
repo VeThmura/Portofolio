@@ -1011,7 +1011,13 @@
     scroll-behavior: auto !important;
   }
 
-  /* Background tetap bergerak karena menjadi bagian dari identitas visual situs. */
+  /* Karakter dekoratif tetap bergerak meski sistem meminta reduced motion. */
+  .chibi-float {
+    animation-duration: 18s !important;
+    animation-iteration-count: infinite !important;
+  }
+
+  /* Background titik tetap bergerak sebagai bagian dari identitas visual situs. */
   .dot-grid {
     animation: dot-grid-drift 14s linear infinite !important;
   }
