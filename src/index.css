@@ -691,10 +691,6 @@
 
   /* Dot-grid CSS digantikan canvas magnet saat efek aktif */
   html.magnet-field .dot-grid {
-    display: block;
-  }
-
-  html.magnet-field .magnet-canvas {
     display: none;
   }
 
