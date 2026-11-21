@@ -15,23 +15,27 @@ export function Preloader({ onFinish }) {
   useEffect(() => {
     // Progress tetap dijalankan agar preloader terlihat konsisten di semua browser.
     // Durasi dibuat cukup panjang agar animasi pengisian benar-benar terlihat.
-    const duration = 2600
+    const duration = 2000
     const startedAt = performance.now()
     let frameId
 
     const animate = (now) => {
       const elapsed = now - startedAt
-      const next = Math.min(100, (elapsed / duration) * 100)
+      const linear = Math.min(1, elapsed / duration)
+      // Ease-out agar gerakan halus: cepat di awal, melambat saat penuh.
+      const eased = 1 - (1 - linear) ** 3
+      const next = eased * 100
       setProgress(next)
 
       if (next < 100) {
         frameId = window.requestAnimationFrame(animate)
       } else {
         // Pastikan angka 100% sempat terlihat sebelum layar ditutup.
+        setProgress(100)
         window.setTimeout(() => {
           setVisible(false)
           onFinish?.()
-        }, 450)
+        }, 300)
       }
     }
 
