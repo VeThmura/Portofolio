@@ -26,7 +26,7 @@ export function Preloader({ onFinish }) {
       setProgress(100)
       setVisible(false)
       onFinish?.()
-    }, 350)
+    }, 450)
 
     return () => window.clearTimeout(timer)
   }, [onFinish])
@@ -37,7 +37,7 @@ export function Preloader({ onFinish }) {
         <motion.div
           className="fixed inset-0 z-[120] grid place-items-center bg-canvas"
           exit={{ opacity: 0, filter: 'blur(8px)' }}
-          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
           aria-hidden="true"
         >
           {/* Pola titik latar */}

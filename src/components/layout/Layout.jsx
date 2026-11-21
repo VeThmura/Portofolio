@@ -7,6 +7,7 @@ import { CommandPalette } from '@/components/layout/CommandPalette'
 import { Footer } from '@/components/layout/Footer'
 import { Navbar } from '@/components/layout/Navbar'
 import { ScrollProgress } from '@/components/layout/ScrollProgress'
+import { Preloader } from '@/components/layout/Preloader'
 import { ChatWidget } from '@/components/chat/ChatWidget'
 import { ProjectModal } from '@/components/ui/ProjectModal'
 import Landing from '@/pages/Landing'
@@ -64,6 +65,7 @@ export function Layout() {
       </a>
 
       <ScrollProgress />
+      <Preloader />
       <Navbar onOpenCommand={openCommand} />
 
       <main id="konten-utama" className="flex-1" tabIndex={-1}>
