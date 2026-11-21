@@ -31,8 +31,7 @@ export function Preloader({ onFinish }) {
     return () => window.clearTimeout(timer)
   }, [onFinish])
 
-  return (
-    {visible ? (
+  return visible ? (
         <motion.div
           className="fixed inset-0 z-[120] grid place-items-center bg-canvas"
           exit={{ opacity: 0, filter: 'blur(8px)' }}
@@ -127,6 +126,5 @@ export function Preloader({ onFinish }) {
             </div>
           </div>
         </motion.div>
-      ) : null
-  )
+  ) : null
 }
