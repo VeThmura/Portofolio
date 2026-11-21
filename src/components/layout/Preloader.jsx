@@ -16,6 +16,7 @@ export function Preloader({ onFinish }) {
     const prefersReduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
 
     if (prefersReduced) {
+      setVisible(false)
       onFinish?.()
       return undefined
     }
@@ -31,7 +32,9 @@ export function Preloader({ onFinish }) {
     return () => window.clearTimeout(timer)
   }, [onFinish])
 
-  return visible ? (
+  if (!visible) return null
+
+  return (
         <motion.div
           className="fixed inset-0 z-[120] grid place-items-center bg-canvas"
           exit={{ opacity: 0, filter: 'blur(8px)' }}
