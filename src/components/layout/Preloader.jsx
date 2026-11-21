@@ -13,16 +13,9 @@ export function Preloader({ onFinish }) {
   const [visible, setVisible] = useState(true)
 
   useEffect(() => {
-    const prefersReduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
-
-    if (prefersReduced) {
-      setVisible(false)
-      onFinish?.()
-      return undefined
-    }
-
-    // Isi progress secara halus sampai penuh, lalu masuk ke halaman utama.
-    const duration = 2600
+    // Progress tetap dijalankan agar preloader terlihat konsisten di semua browser.
+    // Durasi dibuat cukup panjang agar animasi pengisian benar-benar terlihat.
+    const duration = 5000
     const startedAt = performance.now()
     let frameId
 
@@ -34,8 +27,11 @@ export function Preloader({ onFinish }) {
       if (next < 100) {
         frameId = window.requestAnimationFrame(animate)
       } else {
-        setVisible(false)
-        onFinish?.()
+        // Pastikan angka 100% sempat terlihat sebelum layar ditutup.
+        window.setTimeout(() => {
+          setVisible(false)
+          onFinish?.()
+        }, 450)
       }
     }
 
