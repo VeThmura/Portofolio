@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#de5578" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <title>Muhammad Raffi Ar Rasyid — Portofolio Siswa &amp; Web Developer</title>
+    <meta
+      name="description"
+      content="Portofolio Muhammad Raffi Ar Rasyid, siswa SMK AK Nusa Bangsa jurusan RPL dan web developer. Membangun website yang cepat, rapi, dan menarik."
+    />
+    <meta name="author" content="Muhammad Raffi Ar Rasyid" />
+    <meta
+      name="keywords"
+      content="portofolio, web developer, siswa SMK AK Nusa Bangsa, RPL, react developer, freelance, jasa web, Indonesia"
+    />
+    <link rel="canonical" href="https://muhammadraffi.dev/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Muhammad Raffi Ar Rasyid Portofolio" />
+    <meta property="og:title" content="Muhammad Raffi Ar Rasyid — Siswa &amp; Web Developer" />
+    <meta
+      property="og:description"
+      content="Membangun website yang cepat, rapi, dan menarik untuk sekolah, komunitas, dan UMKM."
+    />
+    <meta property="og:url" content="https://muhammadraffi.dev/" />
+    <meta property="og:image" content="/og-image.svg" />
+    <meta property="og:locale" content="id_ID" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Muhammad Raffi Ar Rasyid — Portofolio Siswa &amp; Web Developer" />
+    <meta
+      name="twitter:description"
+      content="Membangun website yang cepat, rapi, dan menarik untuk sekolah, komunitas, dan UMKM."
+    />
+    <meta name="twitter:image" content="/og-image.svg" />
+
+    <script>
+      ;(function () {
+        try {
+          var stored = localStorage.getItem('mint-theme')
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+          var theme = stored || (prefersDark ? 'dark' : 'light')
+          document.documentElement.classList.toggle('dark', theme === 'dark')
+          document.documentElement.style.colorScheme = theme
+
+          var meta = document.querySelector('meta[name="theme-color"]')
+          if (meta) meta.setAttribute('content', theme === 'dark' ? '#2c2733' : '#de5578')
+        } catch (e) {}
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
