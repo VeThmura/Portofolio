@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'motion/react'
+import { motion } from 'motion/react'
 import { useEffect, useState } from 'react'
 import { site } from '@/data/siteData'
 import { ChibiDuduk } from '@/components/ui/ChibiSprites'
@@ -32,8 +32,7 @@ export function Preloader({ onFinish }) {
   }, [onFinish])
 
   return (
-    <AnimatePresence>
-      {visible ? (
+    {visible ? (
         <motion.div
           className="fixed inset-0 z-[120] grid place-items-center bg-canvas"
           exit={{ opacity: 0, filter: 'blur(8px)' }}
@@ -128,7 +127,6 @@ export function Preloader({ onFinish }) {
             </div>
           </div>
         </motion.div>
-      ) : null}
-    </AnimatePresence>
+      ) : null
   )
 }
